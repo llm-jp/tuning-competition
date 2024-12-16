@@ -1,0 +1,272 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>大規模言語モデルのファインチューニング技術と評価 - チューニングコンペティション</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+            <link rel="stylesheet" href="assets/css/flaticon.css">
+            <link rel="stylesheet" href="assets/css/slicknav.css">
+            <link rel="stylesheet" href="assets/css/animate.min.css">
+            <link rel="stylesheet" href="assets/css/magnific-popup.css">
+            <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+            <link rel="stylesheet" href="assets/css/themify-icons.css">
+            <link rel="stylesheet" href="assets/css/slick.css">
+            <link rel="stylesheet" href="assets/css/nice-select.css">
+            <link rel="stylesheet" href="assets/css/style.css">
+            <link rel="stylesheet" href="assets/css/responsive.css">
+   </head>
+
+   <body>
+       
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+       <div class="header-area header-transparrent ">
+            <div class="main-header sky-blue header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-2">
+                            <div class="logo">
+                              <a href="index.html">
+				<img src="assets/img/NLPlogo_300x100.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">    
+                                      <li><a href="index.html"> ワークショップ</a></li>
+                                            <li><a href="feature.html">コンペティション</a></li>				      
+                                            <li  class="active"><a href="tasks.html">コンペティション詳細説明</a></li>
+
+                                        <li><a href="contact.html">オーガナイザ</a></li>
+					    
+                                    </ul>
+                                </nav>
+
+			    </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </header>
+
+    <main>
+      <div class="single-slider slider-height slider-padding black d-flex align-items-center">
+	<div class="container">                
+          <div class="row d-flex align-items-center">
+<!--            <div class="col-lg-22 col-md-12 "> -->
+            <div class="col-lg-22 col-md-10 ">
+              <div class="hero__caption">
+		<br>
+		<br><br>		
+                <h3 data-animation="fadeInUp" data-delay=".6s">コンペティション詳細説明</h3>
+		<br><br>
+		<br><br>		
+                <h4 data-animation="fadeInUp" data-delay=".6s">評価タスク</h4>
+		<br>
+		<p data-animation="fadeInUp" data-delay=".8s">
+		  以下の2つのタスクについて、評価を行います。どちらか一つの評価タスクのみに参加するのでもかまいません。
+		</p>
+		<br>
+		<h4 data-animation="fadeInUp" data-delay=".6s">安全性タスク</h4>
+		<p data-animation="fadeInUp" data-delay=".8s">
+<br>		  
+安全性と有用性を両立した応答をするためのチューニングを行います。
+		有害な入力が与えられた場合にも安全面で適切な回答を行い、尚且つ回答の有用性も担保したLLMの作成を目的としています。
+<br><br>
+
+安全性については、安全性への配慮を要するQAデータセット「AnswerCarefully」を利用した評価を行う予定です。
+また、有用性については、1. 「一般的なLLM利用」と、2. 「本来回答してほしい事例に対して、過剰な回答拒否はせず、適切に回答できるか」について評価を行う予定です。1番については「ichikara-instruction」と同等のデータ（= ichikara-eval）を用いて評価を行います。2番については「AnswerCarefully」をベースに、「一見有害に見えるが、回答可能な事例」のデータ（= AnswerCarefully ボーダーライン）を用いて評価を行います。
+これらの安全性と有用性のデータについて、それぞれサンプルデータを提供いたしますので、是非ともご確認ください。
+<br><br>				
+
+評価についてはLLM-as-a-Judgeを利用して実施します。
+安全性については、「出力が有害」と「出力が無害かつ有用」の観点で評価を実施予定です。
+有用性については、1. 「一般的なLLM利用」については「流暢性」「正確性」「詳細性」「関連性」の観点で評価を実施予定です。また、2. 「本来回答してほしい事例に対して、過剰な回答拒否はせず、適切に回答できるか」については、「出力が過剰な回答拒否かどうか」の観点で評価を実施予定です。
+また、本タスクでは確実な安全性に重きを置き、チューニング後のLLMの推論はシードを変更して複数回行う予定です。
+<br><br>				
+
+サンプルデータは参加者に適宜共有いたします。
+「AnswerCarefully」データ、「ichikara-dev」データ、「AnswerCarefully ボーダーライン」データを「ツール・データ」に記載したリンクにて共有予定ですのでご確認ください。
+なお、これらのデータは本コンペティションのみでご利用ください。これらのデータは既に公開済みか、後ほど何らかの形での公開予定のデータですので、コンペティション以外の利用はそちらをご利用ください。
+
+<br><br>
+</p>
+		<h4 data-animation="fadeInUp" data-delay=".6s">数学タスク</h4>
+		<p data-animation="fadeInUp" data-delay=".8s">
+<br>		  		  
+		数学タスクでは、現在広く用いられている数学データセットの一つであるMATHデータセット (Hendrycs et al., 2021) の日本語翻訳データのもとで正解率を競います。MATHデータセットは米国の高校数学コンテストで出題された問題に基づくデータセットです。代数学、幾何学、確率など幅広い単元をカバーしており、難易度も様々です。
+<br><br>		
+
+<ol>
+  <li>例題１
+    <ol>
+      <br>		                
+      <li>問題：一辺の長さが2センチメートルの立方体がある。各辺の長さを伸ばして体積が19立方センチメートル大きい立方体を作るとき、新しい立方体の一辺の長さを求めなさい。
+      <li>解答：3
+    </ol>
+<br>		    
+  <li>例題２
+<ol>
+  <br>
+      <li>問題：異なる2つの整数を1から9までの整数の中から選びます。それらが両方とも奇数である確率を求めなさい。
+      <li>解答：<sup>5</sup>/<sub>18</sub>
+    </ol>
+</ol>    
+<br>
+		<p data-animation="fadeInUp" data-delay=".8s">
+		  
+システムの性能はテストセットの問題に対する正解率で評価します。システム出力の最終行を回答とみなし、正解との完全一致に基づき正解・不正解の判定を行います。
+<br><br>
+
+外部ツールを使用するシステムを構築しても構いません。例えば、推論の途中で計算を行うために電卓を呼び出したり (Cobbe et al., 2021)、モデルの生成テキストから最終的な回答を抜き出すスクリプトを呼び出し、最終的なシステム出力を整形しても構いません。使用可能な外部ツールの範囲に関しては後述の共通ルールをご確認ください。
+<br><br>
+		</p>
+
+              </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+	<!--      <div class="single-slider slider-height slider-padding black d-flex align-items-center"> -->
+      <div class="single-slider slider-height slider-padding gray d-flex align-items-center"> 	  
+	<div class="container">                
+          <div class="row d-flex align-items-center">
+<!--            <div class="col-lg-22 col-md-12 "> -->
+            <div class="col-lg-22 col-md-10 ">
+              <div class="hero__caption">
+		<br>
+		<br><br>		
+		
+		<h4 data-animation="fadeInUp" data-delay=".6s">共通ルール</h4>
+		<p data-animation="fadeInUp" data-delay=".8s">
+		  <ol>		
+<li>チューニングを行うベースモデルは、llm-jp-3-13b とします（インストラクションチューニング済みモデルも可）。</ul>
+<ol>		
+<li><a href="https://huggingface.co/llm-jp/llm-jp-3-13b">https://huggingface.co/llm-jp/llm-jp-3-13b</a>
+<li><a href="https://huggingface.co/llm-jp/llm-jp-3-13b-instruct">https://huggingface.co/llm-jp/llm-jp-3-13b-instruct</a>  
+</ol>
+<li>２つの評価タスクについて1つのモデルを構築してもよいですし、異なるモデルを構築してもかまいません。</li>
+
+<li>チューニング手法について制約はありません。継続学習、教師付き学習、知識編集など、何をやってもかまいません。
+
+<li>新たにデータを構築してもかまいません。本コンペティションで利用したデータについて公開義務はありません。
+
+<li>デコーダやプロンプトを工夫してもかまいません。結果提出時には、デコーダやプロンプトを含めて提出していただきます。
+
+<li>RAGや外部ツールを使用してもかまいませんが、評価の際にはネットワークから遮断した環境でモデルを動かします。モデルを動かすのに必要なファイルやデータは全て提出物に含めてください。
+
+<li>評価の際は以下の計算リソースを用います。この条件で評価が完了するようにしてください。
+<ol>
+<li>mdx A100 40G x 1
+<li>時間制限
+<li>提出するDockerイメージのサイズ: 1TBまで
+</ol>  
+</ol>
+</p>
+
+<br><br>
+<h4 data-animation="fadeInUp" data-delay=".6s">ツール・データ</h4>		
+<p data-animation="fadeInUp" data-delay=".8s">
+  <ol>
+    <li>ベースモデル <a href="https://huggingface.co/llm-jp/llm-jp-3-13b">
+https://huggingface.co/llm-jp/llm-jp-3-13b</a>
+    <li>インストラクションチューニング済みモデル
+      <a href="https://huggingface.co/llm-jp/llm-jp-3-13b-instruct">https://huggingface.co/llm-jp/llm-jp-3-13b-instruct</a>
+    <li>サンプルコード（チューニング） llm-jp-3-13b をチューニングして llm-jp-3-13b-instruct2 を作るプログラム
+      <ol>
+	<li> <a href="https://github.com/llm-jp/tuning-competition-baseline">https://github.com/llm-jp/tuning-competition-baseline</a>
+      </ol>
+<!--    <li>サンプルコード（デコーダ） llm-jp-3-13b-instruct を動かして、開発データに対して出力と評価結果を出し、リーダーボードに載せるツール 
+      <ol>
+	<li> 評価スクリプトを最終評価までに作成する形となります(開発データは公開しますが, 評価ツールは公開しない形となります). しばらくお待ちください.
+      </ol>
+-->
+    <li>サンプルデータ
+      <ol>      
+	<li>安全性チューニング <a href="https://drive.google.com/drive/folders/1CA9aDM4miw8U8-JUz8hPM7ZME5KSz7zU?usp=drive_link"> Google Drive</a>	  	    
+	<li>数学チューニング (数学タスクのサンプルデータを参照ください)
+      </ol>
+    <li>Weights & Biases
+      <ol>
+	<li>		今回のコンペティションの利用に際しては、アカデミックの方だけではなく、企業の方のご利用も可能です。
+      </ol>
+</ol>
+<br><br>
+		<h4 data-animation="fadeInUp" data-delay=".6s">結果提出方法</h4>
+<p data-animation="fadeInUp" data-delay=".8s">
+  
+		<ol>
+		  <li>モデルパラメーターと推論用スクリプトをDockerイメージに含めて提出してください。
+		  <li>Dockerイメージの保存方法は以下のスクリプトを参考にしてください。(この資料が世に出る前にレポジトリの公開および、mainブランチにマージすること)<a href="https://github.com/llm-jp/nlp2025-ws/tree/main/docker_sample">https://github.com/llm-jp/nlp2025-ws/tree/main/docker_sample</a>
+		  <li>保存するDockerイメージの最大サイズは1TBまでとします。
+		  <li>最終的な提出先は後日お知らせします。
+		</ol>
+</p>		
+
+
+              </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+    </main>
+		    
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		
+	<!-- Jquery, Popper, Bootstrap -->
+	
+		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="./assets/js/owl.carousel.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+        <!-- Date Picker -->
+        <script src="./assets/js/gijgo.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="./assets/js/wow.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+		<!-- Scrollup, nice-select, sticky -->
+        <script src="./assets/js/jquery.scrollUp.min.js"></script>
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
+		<script src="./assets/js/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="./assets/js/contact.js"></script>
+        <script src="./assets/js/jquery.form.js"></script>
+        <script src="./assets/js/jquery.validate.min.js"></script>
+        <script src="./assets/js/mail-script.js"></script>
+        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/main.js"></script>
+        
+    </body>
+</html>
